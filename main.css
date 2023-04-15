@@ -1,12 +1,14 @@
 body {
     font-family: Arial, Helvetica, sans-serif;
+    margin-top: 0;
 }
 .container {
     width: 500px;
-    margin: 20px auto;
+    margin: 0 auto 20px auto;
+    padding: 25px 20px 20px 20px;
 }
 .form {
-    background-color: #eee;
+    background-color: teal;
     border-radius: 6px;
     padding: 20px;
     display: flex;
@@ -23,15 +25,15 @@ body {
 }
 .add {
     border: none;
-    background-color: #f44336;
-    color: white;
+    background-color: white;
+    color: black;
     padding: 10px;
     border-radius: 6px;
     margin-left: 10px;
     cursor: pointer;
 }
 .tasks {
-    background-color: #eee;
+    background-color: teal;
     margin-top: 20px;
     border-radius: 6px;
     padding: 20px;
@@ -60,15 +62,18 @@ body {
 .delete, .clear {
     font-weight: bold;
     font-size: 10px;
-    background-color: red;
-    color: white;
+    background-color: white;
+    color: black;
     padding: 2px 6px;
     border-radius: 4px;
     cursor: pointer;
 }
-
 .clear {
     padding: 7px 10px;
     font-size: 15px;
-    margin-left: 10px;
+}
+h1 {
+    margin-left: auto;
+    margin-right: auto;
+    width: fit-content;
 }
