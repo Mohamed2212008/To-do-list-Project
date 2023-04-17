@@ -47,19 +47,15 @@ body {
     justify-content: space-between;
     align-items: center;
     transition: 0.3s;
-    cursor: pointer;
     border: 1px solid #ccc;
 } 
 .tasks li:not(:last-child) {
     margin-bottom: 15px;
 }
-.tasks li:hover {
-    background-color: #f7f7f7;
-}
 .tasks li.done {
     opacity: 0.5;
 }
-.delete, .clear {
+.delete, .clear, .done {
     font-weight: bold;
     font-size: 10px;
     background-color: white;
@@ -67,6 +63,9 @@ body {
     padding: 2px 6px;
     border-radius: 4px;
     cursor: pointer;
+}
+.done {
+    margin-right: 10px;
 }
 .clear {
     padding: 7px 10px;
@@ -76,4 +75,11 @@ h1 {
     margin-left: auto;
     margin-right: auto;
     width: fit-content;
+}
+.dark {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    font-size: 20px;
+    font-weight: 800;
 }

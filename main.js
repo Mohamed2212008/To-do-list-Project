@@ -45,13 +45,21 @@ function addTasksToPage(tasksArray) {
         let content = document.createTextNode(e.content);
         let del = document.createElement("button");
         let deContent = document.createTextNode("Delete");
+        let done = document.createElement("button");
+        let doneContent = document.createTextNode("done")
+        let btnDiv = document.createElement("div");
         del.appendChild(deContent);
         del.classList.add("delete");
+        done.appendChild(doneContent);
+        done.classList.add("done");
+        btnDiv.appendChild(done);
+        btnDiv.appendChild(del);
+        btnDiv.classList.add("buttons");
         li.appendChild(content);
         li.classList.add("task");
         li.setAttribute("data-content", e.content);
         li.setAttribute("data-id", e.id);
-        li.appendChild(del);
+        li.appendChild(btnDiv);
         ul.appendChild(li);
     });
 }
@@ -70,10 +78,10 @@ function addToDoneList(tasksArray) {
 
 ul.addEventListener("click", (e) => {
     if (e.target.classList.contains("delete")) {
-        delTask(e.target.parentElement.getAttribute("data-id"))
-    } else if (e.target.classList.contains("task")) {
-        doneTask(e.target);
-        addDoneTaskToLocalStorage(e.target.getAttribute("data-content"));
+        delTask(e.target.parentElement.parentElement.getAttribute("data-id"))
+    } else if (e.target.classList.contains("done")) {
+        doneTask(e.target.parentElement.parentElement);
+        addDoneTaskToLocalStorage(e.target.parentElement.parentElement.getAttribute("data-content"));
     }
 });
 
