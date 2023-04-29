@@ -12,6 +12,13 @@ if (window.localStorage.getItem("tasks")) {
     addToLocalStorage(tasksArray);
 }
 
+input.addEventListener("keypress", (e) => {
+    if (e.key === "Enter") {
+        e.preventDefault();
+        btn.click();
+    }
+})
+
 btn.onclick = function () {
     if (input.value == "") {
         window.alert("You didn't enter the task");
